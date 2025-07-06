@@ -1,0 +1,85 @@
+.navbar {
+    --navbar-padding: 1.85rem 0 2rem;
+    --navbar-border-color: var(--neutral-grayish-blue);
+    --navbar-hover-link-color: var(--primary-pale-orange);
+    --navbar-hover-underline-color: var(--primary-orange);
+    --navbar-transition-time: 0.3s;
+
+
+    display: flex;
+    border-bottom: 1px solid var(--navbar-border-color);
+    padding: var(--navbar-padding);
+    align-items: center;
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+    margin-inline-start: 3.5rem;
+    font-size: 0.95rem;
+    gap: 2rem;
+}
+
+.navbar__links a {
+    color: var(--neutral-dark-gray-blue);
+    text-decoration: none;
+    position: relative;
+    transition: color var(--navbar-transition-time);
+}
+
+.navbar__links a::after {
+    content: '';
+    height: 4px;
+    background-color: var(--navbar-hover-underline-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3rem;
+    transform: scaleX(0);
+    transition: transform var(--navbar-transition-time);
+}
+
+.navbar__links a:hover {
+    color: var(--navbar-hover-link-color);
+}
+
+.navbar__links a:hover::after {
+    transform: scaleX(1);
+
+}
+
+.navbar__icons {
+    margin-inline-start: auto;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.navbar__icons .cart {
+    cursor: pointer;
+}
+
+.navbar__icons .cart svg {
+    transition: all var(--navbar-transition-time);
+    fill: var(--neutral-dark-gray-blue);
+}
+
+.navbar__icons .cart:hover svg {
+    fill: var(--neutral-black);
+}
+
+.profile {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.profile:hover {
+    outline: 3px solid var(--navbar-hover-underline-color);
+}
+
+.profile__avatar {
+    max-width: 100%;
+    display: block;
+}
