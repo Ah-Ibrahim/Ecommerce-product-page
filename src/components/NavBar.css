@@ -17,7 +17,7 @@
     list-style: none;
     margin-inline-start: 3.5rem;
     font-size: 0.95rem;
-    gap: 2rem;
+    gap: 2.05rem;
 }
 
 .navbar__links a {
@@ -55,31 +55,31 @@
     align-items: center;
 }
 
-.navbar__icons .cart {
-    cursor: pointer;
+.navbar__icons .cart-icon {
+    position: relative;
 }
 
-.navbar__icons .cart svg {
+.navbar__icons .cart-icon svg {
     transition: all var(--navbar-transition-time);
     fill: var(--neutral-dark-gray-blue);
 }
 
-.navbar__icons .cart:hover svg {
+.navbar__icons .cart-icon__btn:hover svg {
     fill: var(--neutral-black);
 }
 
-.profile {
+.profile-icon {
     width: 50px;
     aspect-ratio: 1 / 1;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.profile:hover {
+.profile-icon:hover {
     outline: 3px solid var(--navbar-hover-underline-color);
 }
 
-.profile__avatar {
+.profile-icon__avatar {
     max-width: 100%;
     display: block;
 }

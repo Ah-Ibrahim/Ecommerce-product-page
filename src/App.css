@@ -9,3 +9,9 @@
   --neutral-white: hsl(0, 0%, 100%);
   --neutral-black: hsl(0, 0%, 0%);
 }
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
