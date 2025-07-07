@@ -3,7 +3,7 @@ import ProductSection from '../components/ProductSection';
 import './ProductPage.css';
 import '../App.css';
 
-function ProductPage() {
+function ProductPage({ product, onUpdateProduct }) {
 	return (
 		<div className="page">
 			<NavBar />
