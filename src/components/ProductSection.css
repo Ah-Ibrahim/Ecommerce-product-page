@@ -1,0 +1,10 @@
+.product-section {
+    --product-section-padding: 5.5rem 3rem;
+    --product-section-no-columns: 2;
+    --product-section-gap: 12.5%;
+
+    padding: var(--product-section-padding);
+    display: grid;
+    grid-template-columns: repeat(var(--product-section-no-columns), 1fr);
+    grid-gap: var(--product-section-gap);
+}

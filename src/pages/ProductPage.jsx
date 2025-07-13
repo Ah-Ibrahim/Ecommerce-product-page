@@ -3,11 +3,11 @@ import ProductSection from '../components/ProductSection';
 import './ProductPage.css';
 import '../App.css';
 
-function ProductPage({ product, onUpdateProduct }) {
+function ProductPage(props) {
 	return (
 		<div className="page">
 			<NavBar />
-			<ProductSection />
+			<ProductSection {...props} />
 		</div>
 	);
 }

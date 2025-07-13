@@ -64,7 +64,7 @@
     fill: var(--neutral-dark-gray-blue);
 }
 
-.navbar__icons .cart-icon__btn:hover svg {
+.navbar__icons .btn--cart-icon:hover svg {
     fill: var(--neutral-black);
 }
 
