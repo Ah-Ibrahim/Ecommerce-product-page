@@ -1,0 +1,16 @@
+.btn--primary {
+    background-color: var(--btn-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0.85rem;
+    padding: 1.2rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.btn--primary svg {
+    fill: var(--btn-color-text);
+}

@@ -10,8 +10,21 @@
   --neutral-black: hsl(0, 0%, 0%);
 }
 
-button {
+.btn {
+  --btn-color-primary: var(--primary-orange);
+  --btn-color-secondary: var(--neutral-light-grayish-blue);
+
+  --btn-color-text: var(--primary-pale-orange);
+
+  font-family: inherit;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: var(--btn-color-text);
+}
+
+/* centers icon */
+.btn--icon {
+  display: grid;
+  place-content: center;
 }
