@@ -1,0 +1,45 @@
+.gallery-container {
+    --figures-border-radius: 0.75rem;
+    --color-outline: var(--primary-orange);
+}
+
+/* Resetting imgs */
+.gallery-container img {
+    max-width: 100%;
+    display: block;
+}
+
+.gallery-container__main-img {
+    margin-block-end: 2.25rem;
+}
+
+.gallery-container figure, .btn--gallery {
+    border-radius: var(--figures-border-radius);
+    overflow: hidden;
+}
+
+.gallery-container figure.btn--gallery {
+    --figures-border-radius: 0.5rem;
+}
+
+.gallery-container__sec-imgs {
+    display: flex;
+    gap: 7.5%;
+}
+
+.btn--gallery {
+    transition: outline 0.1s;
+}
+
+.btn--gallery img {
+    transition: opacity 0.1s;
+
+}
+
+.btn--gallery--selected {
+    outline: 3px solid var(--color-outline);
+}
+
+.btn--gallery--selected img {
+    opacity: 0.25;
+}
