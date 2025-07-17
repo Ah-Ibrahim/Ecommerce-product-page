@@ -4,7 +4,8 @@
     --navbar-hover-link-color: var(--primary-pale-orange);
     --navbar-hover-underline-color: var(--primary-orange);
     --navbar-transition-time: 0.3s;
-
+    --navbar-color-cart-quantity: var(--neutral-white);
+    --navbar-bg-color-cart-quantity: var(--primary-orange);
 
     display: flex;
     border-bottom: 1px solid var(--navbar-border-color);
@@ -59,12 +60,23 @@
     position: relative;
 }
 
-.navbar__icons .cart-icon svg {
+.navbar__icons .cart-icon__quantity {
+    position: absolute;
+    bottom: 70%;
+    left: 50%;
+    color: var(--navbar-color-cart-quantity);
+    background-color: var(--navbar-bg-color-cart-quantity);
+    font-size: 0.60rem;
+    padding: 0.15em 0.75em;
+    border-radius: 45%;
+}
+
+.cart-icon svg {
     transition: all var(--navbar-transition-time);
     fill: var(--neutral-dark-gray-blue);
 }
 
-.navbar__icons .btn--cart-icon:hover svg {
+.navbar__icons .btn--icon:hover svg {
     fill: var(--neutral-black);
 }
 
@@ -73,6 +85,7 @@
     aspect-ratio: 1 / 1;
     cursor: pointer;
     border-radius: 50%;
+    transition: outline 0.1s;
 }
 
 .profile-icon:hover {

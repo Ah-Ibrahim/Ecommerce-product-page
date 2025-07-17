@@ -7,6 +7,7 @@
     --cart-line-color: var(--navbar-border-color);
     --cart-border-radius: 10px;
     --cart-msg-color: var(--neutral-dark-gray-blue);
+    --cart-color-remove-btn: var(--neutral-grayish-blue);
 
     text-align: initial;
     position: absolute;
@@ -36,4 +37,41 @@
     padding-bottom: 4.75rem;
     color: var(--cart-msg-color);
     font-weight: 600;
+}
+
+.cart__body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem var(--cart-side-padding) 0.75rem;
+    color: var(--cart-msg-color)
+}
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.product-prices {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+}
+
+.product-total {
+    color: var(--neutral-black);
+    font-weight: bold;
+}
+
+.cart-item__img img {
+    max-width: 100%;
+    display: block;
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.cart-item .btn--cart-remove svg {
+    fill: var(--cart-color-remove-btn);
 }

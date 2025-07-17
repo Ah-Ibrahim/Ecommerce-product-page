@@ -32,8 +32,7 @@
 }
 
 .btn--gallery img {
-    transition: opacity 0.1s;
-
+    transition: opacity 0.05s;
 }
 
 .btn--gallery--selected {

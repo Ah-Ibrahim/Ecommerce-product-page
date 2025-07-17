@@ -3,6 +3,7 @@ import ProductPage from './pages/ProductPage';
 import FontPreloader from './utils/FontPreloader';
 import ProductsData from './data.json';
 import { useEffect, useState } from 'react';
+import { ProductsContext } from './ProductsContext';
 
 function InitializeProducts() {
 	const quantity = JSON.parse(localStorage.getItem('productsQuantity')) ?? {};
@@ -46,10 +47,12 @@ function App() {
 	return (
 		<>
 			<FontPreloader />
-			<ProductPage
-				product={products[0]}
-				onUpdateProduct={(quantity) => updateProductQuantity(products[0].id, quantity)}
-			/>
+			<ProductsContext.Provider value={{ products, updateProductQuantity }}>
+				<ProductPage
+					product={products[0]}
+					onUpdateProduct={(quantity) => updateProductQuantity(products[0].id, quantity)}
+				/>
+			</ProductsContext.Provider>
 		</>
 	);
 }
