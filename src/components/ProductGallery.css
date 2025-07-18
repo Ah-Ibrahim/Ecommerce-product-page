@@ -1,6 +1,9 @@
 .gallery-container {
     --figures-border-radius: 0.75rem;
     --color-outline: var(--primary-orange);
+    --gap: 2.25rem;
+    --gallery-list-padding: 0;
+    --width: auto;
 }
 
 /* Resetting imgs */
@@ -9,8 +12,13 @@
     display: block;
 }
 
+.lazy-load-image-background {
+    display: block !important;
+}
+
+
 .gallery-container__main-img {
-    margin-block-end: 2.25rem;
+    margin-block-end: var(--gap);
 }
 
 .gallery-container figure, .btn--gallery {
@@ -23,16 +31,21 @@
 }
 
 .gallery-container__sec-imgs {
+    padding: var(--gallery-list-padding);
     display: flex;
     gap: 7.5%;
 }
 
 .btn--gallery {
-    transition: outline 0.1s;
+    transition: all 0.1s;
 }
 
 .btn--gallery img {
-    transition: opacity 0.05s;
+    transition: opacity 0.1s;
+}
+
+.btn--gallery:hover img {
+    opacity: 0.4;
 }
 
 .btn--gallery--selected {
