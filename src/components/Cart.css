@@ -70,6 +70,7 @@
     display: block;
     width: 50px;
     aspect-ratio: 1;
+    border-radius: 5px;
 }
 
 .cart-item .btn--cart-remove svg {

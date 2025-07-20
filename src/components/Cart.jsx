@@ -65,16 +65,38 @@ function Cart({ selectedProducts, isEmpty, closeCart }) {
 	if (!isEmpty)
 		cartContent = (
 			<div className="cart__body">
-				<AnimatePresence>{items}</AnimatePresence>
+				{items}
 				<Button>Checkout</Button>
 			</div>
 		);
 
 	return (
-		<div className="cart" onClick={(event) => event.stopPropagation()}>
+		<motion.div
+			className="cart"
+			onClick={(event) => event.stopPropagation()}
+			initial={{
+				translateX: '-50%',
+				transformOrigin: 'top',
+				scale: 0,
+			}}
+			animate={{
+				scale: 1,
+				transition: {
+					duration: 0.5,
+					type: 'spring',
+					stiffness: 100,
+				},
+			}}
+			exit={{
+				scale: 0,
+				transition: {
+					duration: 0.5,
+					ease: 'backIn',
+				},
+			}}>
 			<div className="cart__heading">Cart</div>
 			{cartContent}
-		</div>
+		</motion.div>
 	);
 }
 

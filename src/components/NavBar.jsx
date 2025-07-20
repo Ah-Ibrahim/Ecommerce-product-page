@@ -2,7 +2,7 @@ import Cart from './Cart';
 import './NavBar.css';
 import { useState, useContext } from 'react';
 import { ProductsContext } from '../ProductsContext';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 function NavBar() {
 	const [isCartShown, setIsCartShown] = useState(false);
@@ -62,33 +62,46 @@ function NavBar() {
 								/>
 							</svg>
 						</button>
-						{selectedProductsQuantity > 0 && (
-							<motion.div
-								className="cart-icon__quantity"
-								initial={{
-									opacity: 0,
-									scale: 0,
-								}}
-								animate={{
-									opacity: 1,
-									scale: 1,
-								}}
-								transition={{
-									delay: 0.5,
-									duration: 0.45,
-									type: 'spring',
-									stiffness: 200,
-								}}>
-								{selectedProductsQuantity}
-							</motion.div>
-						)}
-						{isCartShown && (
-							<Cart
-								selectedProducts={selectedProducts}
-								isEmpty={selectedProductsQuantity === 0}
-								closeCart={closeCart}
-							/>
-						)}
+						<AnimatePresence>
+							{selectedProductsQuantity > 0 && (
+								<motion.div
+									className="cart-icon__quantity"
+									initial={{
+										opacity: 0,
+										scale: 0,
+									}}
+									animate={{
+										opacity: 1,
+										scale: 1,
+										transition: {
+											delay: 0.5,
+											duration: 0.45,
+											type: 'spring',
+											stiffness: 200,
+										},
+									}}
+									exit={{
+										opacity: 0,
+										scale: 0,
+										transition: {
+											delay: 0.5,
+											duration: 0.45,
+											ease: 'backIn',
+										},
+									}}>
+									{selectedProductsQuantity}
+								</motion.div>
+							)}
+						</AnimatePresence>
+						<AnimatePresence>
+							{isCartShown && (
+								<Cart
+									selectedProducts={selectedProducts}
+									isEmpty={selectedProductsQuantity === 0}
+									closeCart={closeCart}
+								/>
+							)}
+						</AnimatePresence>
 					</div>
 					<div className="profile-icon">
 						<img src="/images/image-avatar.png" alt="Profile Avatar" className="profile-icon__avatar" />
