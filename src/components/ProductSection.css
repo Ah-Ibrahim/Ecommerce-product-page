@@ -8,3 +8,16 @@
     grid-template-columns: repeat(var(--product-section-no-columns), 1fr);
     grid-gap: var(--product-section-gap);
 }
+
+
+@media (width <=1150px) {
+    /* .page {
+        --page-side-padding: 5rem;
+    } */
+}
+
+@media (width <=950px) {
+    .product-section {
+        /* --product-section-gap: 5.5%; */
+    }
+}
