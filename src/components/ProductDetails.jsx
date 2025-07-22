@@ -41,7 +41,10 @@ function ProductDetails({ product, onUpdateProduct }) {
 			</div>
 			<div className="actions-container">
 				<div className="btns-container">
-					<button className="btn btn--icon" onClick={() => handleCountChange(false)}>
+					<button
+						className="btn btn--icon"
+						onClick={() => handleCountChange(false)}
+						aria-label="Decrease Button">
 						<svg
 							width="12"
 							height="4"
@@ -57,7 +60,10 @@ function ProductDetails({ product, onUpdateProduct }) {
 						</svg>
 					</button>
 					<div className="product-quantity">{count}</div>
-					<button className="btn btn--icon" onClick={() => handleCountChange(true)}>
+					<button
+						className="btn btn--icon"
+						onClick={() => handleCountChange(true)}
+						aria-label="Increase Button">
 						<svg
 							width="12"
 							height="12"
