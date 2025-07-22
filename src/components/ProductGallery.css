@@ -3,7 +3,6 @@
     --color-outline: var(--primary-orange);
     --gap: 2.25rem;
     --gallery-list-padding: 0;
-    --width: auto;
 }
 
 /* Resetting imgs */
@@ -16,17 +15,16 @@
     display: block !important;
 }
 
-
-.gallery-container__main-img {
-    margin-block-end: var(--gap);
-}
-
-.gallery-container figure, .btn--gallery {
+.btn--gallery {
     border-radius: var(--figures-border-radius);
     overflow: hidden;
 }
 
-.gallery-container figure.btn--gallery {
+.btn--gallery-main {
+    margin-block-end: var(--gap);
+}
+
+.btn--gallery-sec {
     --figures-border-radius: 0.5rem;
 }
 
@@ -36,15 +34,16 @@
     gap: 7.5%;
 }
 
-.btn--gallery {
+.btn--gallery-sec {
     transition: all 0.1s;
+    background-color: var(--neutral-white);
 }
 
-.btn--gallery img {
-    transition: opacity 0.1s;
+.btn--gallery-sec img {
+    transition: opacity 0.35s;
 }
 
-.btn--gallery:hover img {
+.btn--gallery-sec:hover img {
     opacity: 0.4;
 }
 

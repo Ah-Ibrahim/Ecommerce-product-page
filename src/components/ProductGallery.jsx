@@ -5,33 +5,39 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function ProductGallery({ productImages }) {
-	const [selectedImg, setSelectedImg] = useState(productImages[0]);
-	const [showLightBoxDesktop, setShowLightBoxDesktop] = useState(true);
+	const [selectedImgIndex, setSelectedImgIndex] = useState(0);
+	const [showLightBoxDesktop, setShowLightBoxDesktop] = useState(false);
 
-	const handleBtnClick = function (image) {
-		setSelectedImg(image);
+	const handleBtnSecClick = function (index) {
+		setSelectedImgIndex(index);
 	};
 
-	const handleFigClick = function () {
+	const handleBtnMainClick = function () {
 		setShowLightBoxDesktop(!showLightBoxDesktop);
+	};
+
+	const closeLightBox = function () {
+		setShowLightBoxDesktop(false);
 	};
 
 	const figures = productImages.map((image, index) => (
 		<button
 			key={index}
-			className={`btn btn--gallery  ${selectedImg === image ? 'btn--gallery--selected' : ''} `}
-			onClick={() => handleBtnClick(image)}>
+			className={`btn btn--gallery btn--gallery-sec  ${
+				selectedImgIndex === index ? 'btn--gallery--selected' : ''
+			} `}
+			onClick={() => handleBtnSecClick(index)}>
 			<LazyLoadImage src={image.thumbnail} alt={`Product Image ${index + 1}`} />
 		</button>
 	));
 
 	return (
 		<div className="gallery-container">
-			<figure className="gallery-container__main-img">
-				<LazyLoadImage src={selectedImg.desktop} alt="Product Image" />
-			</figure>
+			<button className="btn btn--gallery btn--gallery-main" title="Open Lightbox" onClick={handleBtnMainClick}>
+				<LazyLoadImage src={productImages[selectedImgIndex].desktop} alt="Product Image" />
+			</button>
 			<div className="gallery-container__sec-imgs">{figures}</div>
-			{showLightBoxDesktop && <Lightbox isMobile={false} />}
+			{showLightBoxDesktop && <Lightbox isMobile={false} productImages={productImages} onClose={closeLightBox} />}
 		</div>
 	);
 }
