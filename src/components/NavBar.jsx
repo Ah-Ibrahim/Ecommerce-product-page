@@ -3,10 +3,14 @@ import './NavBar.css';
 import { useState, useContext } from 'react';
 import { ProductsContext } from '../ProductsContext';
 import { AnimatePresence, motion } from 'motion/react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 function NavBar() {
 	const [isCartShown, setIsCartShown] = useState(false);
 	const { products } = useContext(ProductsContext);
+	const isMobile = useMediaQuery('(max-width: 768px)');
+
+	console.log(` isMobile: ${isMobile}`);
 
 	const selectedProducts = products.filter((item) => {
 		if (item.quantity > 0) return item;
