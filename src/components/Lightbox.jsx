@@ -1,9 +1,10 @@
 import './Lightbox.css';
 import { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { motion } from 'motion/react';
 
-function Lightbox({ isMobile, productImages, onClose }) {
-	const [selectedImgIndex, setSelectedImgIndex] = useState(0);
+function Lightbox({ isMobile, initialSelectedIndex, productImages, onClose }) {
+	const [selectedImgIndex, setSelectedImgIndex] = useState(initialSelectedIndex);
 
 	const handleKeyDown = function (e) {
 		if (e.key === 'ArrowLeft') {
@@ -47,7 +48,26 @@ function Lightbox({ isMobile, productImages, onClose }) {
 
 	return (
 		<div className="overlay" onClick={handleOverlayClick}>
-			<div className="container">
+			<motion.div
+				className="container"
+				initial={{ opacity: 0, y: 150 }}
+				animate={{
+					opacity: 1,
+					y: 0,
+					transition: {
+						duration: 0.35,
+						type: 'spring',
+						stiffness: 110,
+					},
+				}}
+				exit={{
+					opacity: 0,
+					y: 150,
+					transition: {
+						duration: 0.35,
+						ease: 'backIn',
+					},
+				}}>
 				<button className="btn btn--icon btn--close" onClick={handleCloseClick}>
 					<svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -57,12 +77,12 @@ function Lightbox({ isMobile, productImages, onClose }) {
 					</svg>
 				</button>
 				<div className="gallery-container" onClick={(e) => e.stopPropagation()}>
-					<button className="btn btn--gallery btn--gallery-main" title="Open Lightbox">
+					<button className="btn btn--gallery btn--gallery-main">
 						<LazyLoadImage src={productImages[selectedImgIndex].desktop} alt="Product Image" />
 					</button>
 					<div className="gallery-container__sec-imgs">{figures}</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 }
