@@ -124,7 +124,7 @@ function NavBar() {
 						</AnimatePresence>
 					</div>
 					<div className="profile-icon">
-						<img src="/images/image-avatar.png" alt="Profile Avatar" className="profile-icon__avatar" />
+						<img src="./images/image-avatar.png" alt="Profile Avatar" className="profile-icon__avatar" />
 					</div>
 				</div>
 			</nav>
