@@ -1,6 +1,7 @@
 import './ProductDetails.css';
 import Button from './Button';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 function ProductDetails({ product, onUpdateProduct }) {
 	const [count, setCount] = useState(0);
@@ -28,7 +29,26 @@ function ProductDetails({ product, onUpdateProduct }) {
 	return (
 		<div className="product-section__details">
 			<div className="company">{companyName}</div>
-			<div className="heading">{productName}</div>
+			<div className="heading">
+				{'Fall'}{' '}
+				<span>
+					Limited
+					<svg viewBox="0 0 44 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-underline">
+						<motion.path
+							d="M11.1261 1.28853C10.6421 1.28853 10.1581 1.28853 8.33574 1.44986C6.51342 1.61119 3.36744 1.93386 1.76023 2.14041C0.153013 2.34696 0.179902 2.42763 7.34616 2.11963C14.5124 1.81163 28.8172 1.11253 36.1998 0.792714C43.5824 0.472901 43.6093 0.553567 43.0854 0.608567C42.5614 0.663566 41.4859 0.690455 37.9337 1.16142C34.3816 1.63238 28.3854 2.54659 25.0141 3.09822C21.6428 3.64985 21.0782 3.81118 20.6797 3.89429C19.557 4.12848 18.8138 4.30332 18.6504 4.3571C18.5924 4.37619 18.7022 4.51843 19.994 4.52006C21.2859 4.52169 23.7866 4.41414 24.9672 4.35873C26.1479 4.30332 25.9328 4.30332 25.7682 4.31677C25.0851 4.37256 24.005 4.57384 22.8634 5.02117C22.2083 5.47013 21.9907 5.76917 21.9496 5.87794C21.9622 5.90605 22.0429 5.87917 22.126 5.76998"
+							stroke="#FF7D1A"
+							strokeLinecap="round"
+							initial={{ pathLength: 0, opacity: 0 }}
+							animate={{ pathLength: 1, opacity: 1 }}
+							transition={{
+								delay: 1.5,
+								duration: 0.55,
+							}}
+						/>
+					</svg>
+				</span>{' '}
+				{'Edition Sneakers'}
+			</div>
 			<div className="desc">{productDesc}</div>
 			<div className="prices-container">
 				<div className="prices-container__final">${productFinalPrice}</div>

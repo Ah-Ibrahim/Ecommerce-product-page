@@ -29,6 +29,17 @@
     line-height: 1.15;
 }
 
+.product-section__details .heading span {
+    position: relative;
+}
+
+.product-section__details .heading span svg.text-underline {
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    top: 85%;
+}
+
 .product-section__details .desc {
     line-height: 1.65;
 }
