@@ -61,10 +61,20 @@ function ProductDetails({ product, onUpdateProduct }) {
 			</div>
 			<div className="actions-container">
 				<div className="btns-container">
-					<button
+					<motion.button
 						className="btn btn--icon"
 						onClick={() => handleCountChange(false)}
-						aria-label="Decrease Button">
+						aria-label="Decrease Button"
+						whileHover={{
+							scale: 1.3,
+							transition: {
+								duration: 0.2,
+								ease: 'backInOut',
+							},
+						}}
+						whileTap={{
+							scale: 0.9,
+						}}>
 						<svg
 							width="12"
 							height="4"
@@ -78,12 +88,22 @@ function ProductDetails({ product, onUpdateProduct }) {
 							</defs>
 							<use fillRule="nonzero" xlinkHref="#a" />
 						</svg>
-					</button>
+					</motion.button>
 					<div className="product-quantity">{count}</div>
-					<button
+					<motion.button
 						className="btn btn--icon"
 						onClick={() => handleCountChange(true)}
-						aria-label="Increase Button">
+						aria-label="Increase Button"
+						whileTap={{
+							scale: 0.9,
+						}}
+						whileHover={{
+							scale: 1.3,
+							transition: {
+								duration: 0.2,
+								ease: 'backInOut',
+							},
+						}}>
 						<svg
 							width="12"
 							height="12"
@@ -97,7 +117,7 @@ function ProductDetails({ product, onUpdateProduct }) {
 							</defs>
 							<use fillRule="nonzero" xlinkHref="#b" />
 						</svg>
-					</button>
+					</motion.button>
 				</div>
 				<Button onClick={handleCartClick}>
 					<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">

@@ -99,6 +99,10 @@
     & .btn--icon svg {
         fill: var(--product-section-color-button-main);
     }
+
+    & .btn--icon:hover svg {
+        fill: var(--btn-color-primary-hover);
+    }
 }
 
 @media (width <=500px) {

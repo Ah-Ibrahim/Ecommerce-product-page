@@ -14,3 +14,7 @@
 .btn--primary svg {
     fill: var(--btn-color-text);
 }
+
+.btn--primary:hover {
+    background-color: var(--btn-color-primary-hover);
+}

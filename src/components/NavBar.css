@@ -68,8 +68,11 @@
     color: var(--navbar-color-cart-quantity);
     background-color: var(--navbar-bg-color-cart-quantity);
     font-size: 0.60rem;
-    padding: 0.15em 0.75em;
-    border-radius: 45%;
+    width: 17px;
+    display: grid;
+    place-content: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }
 
 :is(.cart-icon, .btn--menu) svg {

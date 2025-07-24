@@ -16,11 +16,14 @@
 
   --btn-color-text: var(--primary-pale-orange);
 
+  --btn-color-primary-hover: hsla(26, 100%, 55%, 0.55);
+
   font-family: inherit;
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: var(--btn-color-text);
+  transition: background-color 0.35s;
 }
 
 /* centers icon */
