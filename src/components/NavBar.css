@@ -6,6 +6,7 @@
     --navbar-transition-time: 0.3s;
     --navbar-color-cart-quantity: var(--neutral-white);
     --navbar-bg-color-cart-quantity: var(--primary-orange);
+    --navbar-color-menu-icon: var(--neutral-dark-gray-blue);
 
     display: flex;
     border-bottom: 1px solid var(--navbar-border-color);
@@ -71,12 +72,12 @@
     border-radius: 45%;
 }
 
-.cart-icon svg {
+:is(.cart-icon, .btn--menu) svg {
     transition: all var(--navbar-transition-time);
     fill: var(--neutral-dark-gray-blue);
 }
 
-.navbar__icons .btn--icon:hover svg {
+:is(.navbar__icons .btn--icon:hover, .btn--menu:hover) svg {
     fill: var(--neutral-black);
 }
 
@@ -95,4 +96,21 @@
 .profile-icon__avatar {
     max-width: 100%;
     display: block;
+}
+
+.btn--menu {
+    margin-inline-end: 1rem;
+}
+
+.btn--menu svg {
+    fill: var(--navbar-color-menu-icon);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    /* z index larger than z index of cart */
+    z-index: 2;
 }

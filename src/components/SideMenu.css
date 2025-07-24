@@ -1,0 +1,40 @@
+.menu-container {
+    --menu-bg-color: var(--neutral-white);
+    --menu-width: max(40%, 300px);
+    --menu-padding: 1.5rem;
+    --menu-gap-links: 1.45rem;
+    --menu-color-text: var(--neutral-black);
+    --menu-color-text-hover: var(--primary-orange);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--menu-width);
+    background-color: var(--menu-bg-color);
+    padding: var(--menu-padding);
+    cursor: initial;
+}
+
+.menu-container .btn--menu {
+    margin-block-end: 3.25rem;
+}
+
+.menu-container__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--menu-gap-links);
+    list-style: none;
+}
+
+.menu-container__links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--menu-color-text);
+    font-size: 1.15rem;
+    transition: color 0.35s;
+}
+
+.menu-container__links a:hover {
+    color: var(--menu-color-text-hover);
+}

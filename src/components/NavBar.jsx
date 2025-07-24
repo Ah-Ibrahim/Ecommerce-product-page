@@ -4,13 +4,13 @@ import { useState, useContext } from 'react';
 import { ProductsContext } from '../ProductsContext';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import SideMenu from './SideMenu.jsx';
 
 function NavBar() {
 	const [isCartShown, setIsCartShown] = useState(false);
+	const [isMenuShown, setIsMenuShown] = useState(false);
 	const { products } = useContext(ProductsContext);
-	const isMobile = useMediaQuery('(max-width: 768px)');
-
-	console.log(` isMobile: ${isMobile}`);
+	const isDesktop = useMediaQuery('(min-width: 950px)');
 
 	const selectedProducts = products.filter((item) => {
 		if (item.quantity > 0) return item;
@@ -24,9 +24,23 @@ function NavBar() {
 
 	const closeCart = () => setIsCartShown(false);
 
+	const handleMenuClick = () => setIsMenuShown(!isMenuShown);
+
+	const closeMenu = () => setIsMenuShown(false);
+
 	return (
 		<header>
 			<nav className="navbar">
+				{!isDesktop && (
+					<>
+						<button className="btn btn--icon btn--menu" onClick={handleMenuClick}>
+							<svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+								<path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fillRule="evenodd" />
+							</svg>
+						</button>
+						<AnimatePresence>{isMenuShown && <SideMenu onClose={closeMenu} />}</AnimatePresence>
+					</>
+				)}
 				<div className="navbar__logo">
 					<svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -36,23 +50,25 @@ function NavBar() {
 						/>
 					</svg>
 				</div>
-				<ul className="navbar__links">
-					<li>
-						<a href="#">Collections</a>
-					</li>
-					<li>
-						<a href="#">Men</a>
-					</li>
-					<li>
-						<a href="#">Women</a>
-					</li>
-					<li>
-						<a href="#">About</a>
-					</li>
-					<li>
-						<a href="#">Contact</a>
-					</li>
-				</ul>
+				{isDesktop && (
+					<ul className="navbar__links">
+						<li>
+							<a href="#">Collections</a>
+						</li>
+						<li>
+							<a href="#">Men</a>
+						</li>
+						<li>
+							<a href="#">Women</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+					</ul>
+				)}
 				<div className="navbar__icons">
 					<div className="cart-icon">
 						<button
