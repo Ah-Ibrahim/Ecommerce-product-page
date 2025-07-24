@@ -1,10 +1,10 @@
-# 🍰 Desserts Shop
+# 🍰 Ecommerce page (with custom Lightbox, animations and fully responsive)
 
-_A responsive dessert ordering website with a smooth shopping experience and performance optimizations._
+_A responsive ecommerce ordering website with a smooth shopping experience and responsive._
 
 ![Project Screenshot](./design/desktop-preview.jpg)
 
-[Live Preview](https://ah-ibrahim.github.io/Desserts-list-with-cart)
+[Live Preview](https://ah-ibrahim.github.io/Ecommerce-product-page/)
 
 ---
 
@@ -24,7 +24,7 @@ _A responsive dessert ordering website with a smooth shopping experience and per
 
 ## 👋 About
 
-This website lets users browse a variety of desserts, add them to their cart, and place an order. It focuses on clean design, responsiveness, and great UX with modern frontend techniques.
+This is a frontend e-commerce challenge inspired project, focused on creating a smooth and immersive product experience. It includes **rich UI interactions**, **layout animations**, **cart logic with persistence**, and **responsive design** tailored for **mobile and desktop**.
 
 ---
 
