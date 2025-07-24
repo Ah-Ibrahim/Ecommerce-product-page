@@ -1,6 +1,6 @@
 .menu-container {
     --menu-bg-color: var(--neutral-white);
-    --menu-width: max(40%, 300px);
+    --menu-width: max(40%, min(350px, 80%));
     --menu-padding: 1.5rem;
     --menu-gap-links: 1.45rem;
     --menu-color-text: var(--neutral-black);
