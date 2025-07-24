@@ -3,14 +3,9 @@
     --min-width: 400px;
     --color-remove-btn: var(--neutral-light-grayish-blue);
     --color-remove-btn-hover: var(--primary-orange);
-
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
     display: grid;
     grid-template-columns: minmax(var(--min-width), var(--width));
     place-content: center;
-    cursor: pointer;
 }
 
 .overlay :is(.gallery-container__sec-imgs, .btn--gallery-main) {

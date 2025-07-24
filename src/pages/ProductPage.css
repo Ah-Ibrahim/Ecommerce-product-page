@@ -1,5 +1,6 @@
 .page {
     --page-side-padding: 10.25rem;
+    --page-inside-inline-padding: 1.5rem;
 
     padding: 0 var(--page-side-padding);
     background-color: var(--neutral-white);
@@ -11,10 +12,8 @@
     }
 }
 
-@media (width <=950px) {
-
-    /* TODO Show Humberger menu as cart menu is overflowing  */
+@media (width <=500px) {
     .page {
-        --page-side-padding: 3rem;
+        --page-side-padding: 0;
     }
 }

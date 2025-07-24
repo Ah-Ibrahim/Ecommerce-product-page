@@ -8,6 +8,7 @@
     --cart-border-radius: 10px;
     --cart-msg-color: var(--neutral-dark-gray-blue);
     --cart-color-remove-btn: var(--neutral-grayish-blue);
+    --cart-top: 215%;
 
     text-align: initial;
     position: absolute;
@@ -15,10 +16,11 @@
     box-shadow: var(--cart-shadow);
     width: var(--cart-width);
     left: 50%;
-    top: 215%;
+    top: var(--cart-top);
     transform: translateX(-50%);
     padding: var(--cart-top-bottom-padding) 0;
     border-radius: var(--cart-border-radius);
+    z-index: 1;
 }
 
 .cart>* {
@@ -75,4 +77,21 @@
 
 .cart-item .btn--cart-remove svg {
     fill: var(--cart-color-remove-btn);
+}
+
+@media (width <=500px) {
+    .cart {
+        --cart-top: 10%;
+        --cart-width: calc(100% - 2rem);
+        position: fixed;
+    }
+
+    .cart-item {
+        justify-content: start;
+        gap: 0.5rem;
+    }
+
+    .cart-item .btn--cart-remove {
+        margin-inline-start: auto;
+    }
 }

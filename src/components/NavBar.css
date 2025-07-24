@@ -114,3 +114,22 @@
     /* z index larger than z index of cart */
     z-index: 2;
 }
+
+
+@media (width <=500px) {
+    .navbar {
+        padding-inline: var(--page-inside-inline-padding);
+        position: relative;
+        border-bottom: none;
+    }
+
+    .profile-icon {
+        width: 40px;
+    }
+}
+
+@media (width <=400px) {
+    .navbar__icons {
+        gap: 1rem;
+    }
+}

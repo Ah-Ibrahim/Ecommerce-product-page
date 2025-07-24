@@ -47,7 +47,13 @@ function Lightbox({ isMobile, initialSelectedIndex, productImages, onClose }) {
 	));
 
 	return (
-		<div className="overlay" onClick={handleOverlayClick}>
+		<motion.div
+			className="overlay"
+			onClick={handleOverlayClick}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0, transition: { delay: 0.4 } }}
+			transition={{ duration: 0.45 }}>
 			<motion.div
 				className="container"
 				initial={{ opacity: 0, y: 150 }}
@@ -83,7 +89,7 @@ function Lightbox({ isMobile, initialSelectedIndex, productImages, onClose }) {
 					<div className="gallery-container__sec-imgs">{figures}</div>
 				</div>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 }
 
