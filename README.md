@@ -1,4 +1,4 @@
-# 🍰 Ecommerce page (with custom Lightbox, animations and fully responsive)
+# 👟 Ecommerce page (with custom Lightbox, animations and fully responsive)
 
 _A responsive ecommerce ordering website with a smooth shopping experience and responsive._
 
