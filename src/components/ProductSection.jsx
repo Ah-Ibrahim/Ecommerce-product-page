@@ -13,6 +13,7 @@ function ProductSection(props) {
 				y: 0,
 			}}
 			transition={{
+				delay: 0.4,
 				duration: 0.35,
 				type: 'spring',
 				stiffness: 110,
