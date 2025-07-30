@@ -23,7 +23,7 @@ function ProductDetails({ product, onUpdateProduct }) {
 	};
 
 	const handleCartClick = function () {
-		onUpdateProduct(productQuantity + count);
+		onUpdateProduct(count);
 	};
 
 	return (
